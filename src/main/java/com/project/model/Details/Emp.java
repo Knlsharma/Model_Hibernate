@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * @author knl
  */
 
-@Entity
+@Entity(name ="Good Employee")
 @Table(name="Employee")
 public class Emp {
     @Id
