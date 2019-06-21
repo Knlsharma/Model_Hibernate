@@ -5,9 +5,9 @@
  */
 package com.project.model.Details;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import java.util.*;
+import javax.persistence.*;
 
 /**
  *
@@ -16,9 +16,11 @@ import javax.persistence.Table;
 
 @Entity(name ="Good Employee")
 @Table(name="Employee")
+
+
 public class Emp {
-    @Id
-    private String id;
+    @Id @GeneratedValue
+    private int id;
     private String emp_phone;
     private String emp_name;
     private String course;
@@ -27,14 +29,21 @@ public class Emp {
     /**
      * @return the id
      */
-    public String getId() {
+  
+    
+   @OneToOne
+   @JoinColumn(name ="add_table_emp")
+   private Emp_address add;
+    
+    
+    public int getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -93,6 +102,22 @@ public class Emp {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    /**
+     * @return the add
+     */
+    public Emp_address getAdd() {
+        return add;
+    }
+
+    /**
+     * @param add the add to set
+     */
+    public void setAdd(Emp_address add) {
+        this.add = add;
+    }
+
+    
     
     
     

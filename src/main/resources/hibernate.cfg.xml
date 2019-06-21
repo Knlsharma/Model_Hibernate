@@ -28,10 +28,10 @@
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
 
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">create-drop</property>
 
 		<mapping class ="com.project.model.Details.Emp"/>
-
+                <mapping class ="com.project.model.Details.Emp_address"/>
 
 	</session-factory>
 </hibernate-configuration>
